@@ -1,0 +1,59 @@
+$color1: #3e3e3e;
+$color2: #9e9e9e;
+
+body {
+    background: linear-gradient(to right, white, grey);
+}
+h1, p {
+    color: $color1;
+}
+.description {
+    font-size: 14px;
+    color: $color2;
+}
+
+.images {
+    display:flex;
+}
+
+.image {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+        content: '';
+        display:block;
+        padding-top:100%;
+    }
+
+    &:after {
+        padding: 10px;
+        background-color: white;
+        float: right;
+        display:block;
+    }
+
+    &--code-small {
+        background-image: url(../img/code-small.jpg);
+
+        &::after {
+            content: 'inline css image in prdouction';
+        }
+    }
+
+    &--code-big {
+        background-image: url(../img/code-big.jpg);
+
+        &::after {
+            content: 'normal image in production';
+        }
+    }
+}
+
+.test-autoprefixer {
+    &::placeholder {
+        color: red;
+    }
+}
+
